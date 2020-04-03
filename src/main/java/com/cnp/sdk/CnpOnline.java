@@ -75,7 +75,12 @@ public class CnpOnline {
 		request.setTransaction(CnpContext.getObjectFactory().createAuthorization(auth));
 		CnpOnlineResponse response = sendToCnp(request);
 		JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-		return (AuthorizationResponse)newresponse.getValue();
+        AuthorizationResponse innerResponse = (AuthorizationResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
 	}
 
 	public AuthReversalResponse authReversal(AuthReversal reversal) throws CnpOnlineException {
@@ -90,7 +95,12 @@ public class CnpOnline {
 		request.setTransaction(CnpContext.getObjectFactory().createAuthReversal(reversal));
 		CnpOnlineResponse response = sendToCnp(request);
 		JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-		return (AuthReversalResponse)newresponse.getValue();
+        AuthReversalResponse innerResponse = (AuthReversalResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
 	}
 
 	public CaptureResponse capture(Capture capture) throws CnpOnlineException {
@@ -105,7 +115,12 @@ public class CnpOnline {
 		request.setTransaction(CnpContext.getObjectFactory().createCapture(capture));
 		CnpOnlineResponse response = sendToCnp(request);
 		JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-		return (CaptureResponse)newresponse.getValue();
+        CaptureResponse innerResponse = (CaptureResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
 	}
 
 	public CaptureGivenAuthResponse captureGivenAuth(CaptureGivenAuth captureGivenAuth) throws CnpOnlineException {
@@ -120,7 +135,12 @@ public class CnpOnline {
 		request.setTransaction(CnpContext.getObjectFactory().createCaptureGivenAuth(captureGivenAuth));
 		CnpOnlineResponse response = sendToCnp(request);
 		JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-		return (CaptureGivenAuthResponse)newresponse.getValue();
+        CaptureGivenAuthResponse innerResponse = (CaptureGivenAuthResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
 	}
 
 	public CreditResponse credit(Credit credit) throws CnpOnlineException {
@@ -135,7 +155,12 @@ public class CnpOnline {
 		request.setTransaction(CnpContext.getObjectFactory().createCredit(credit));
 		CnpOnlineResponse response = sendToCnp(request);
 		JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-		return (CreditResponse)newresponse.getValue();
+        CreditResponse innerResponse = (CreditResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
 	}
 
 	public EcheckCreditResponse echeckCredit(EcheckCredit echeckcredit) throws CnpOnlineException {
@@ -150,7 +175,12 @@ public class CnpOnline {
 		request.setTransaction(CnpContext.getObjectFactory().createEcheckCredit(echeckcredit));
 		CnpOnlineResponse response = sendToCnp(request);
 		JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-		return (EcheckCreditResponse)newresponse.getValue();
+		EcheckCreditResponse innerResponse = (EcheckCreditResponse)newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+		if(innerResponse != null){
+		    innerResponse.setLocation(response.getLocation());
+        }
+		return innerResponse;
 	}
 
 	public EcheckRedepositResponse echeckRedeposit(EcheckRedeposit echeckRedeposit) throws CnpOnlineException {
@@ -165,7 +195,12 @@ public class CnpOnline {
 		request.setTransaction(CnpContext.getObjectFactory().createEcheckRedeposit(echeckRedeposit));
 		CnpOnlineResponse response = sendToCnp(request);
 		JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-		return (EcheckRedepositResponse)newresponse.getValue();
+		EcheckRedepositResponse innerResponse = (EcheckRedepositResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
 	}
 
 	public EcheckSalesResponse echeckSale(EcheckSale echeckSale) throws CnpOnlineException {
@@ -180,7 +215,12 @@ public class CnpOnline {
 		request.setTransaction(CnpContext.getObjectFactory().createEcheckSale(echeckSale));
 		CnpOnlineResponse response = sendToCnp(request);
 		JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-		return (EcheckSalesResponse)newresponse.getValue();
+        EcheckSalesResponse innerResponse = (EcheckSalesResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
 	}
 
 	public EcheckVerificationResponse echeckVerification(EcheckVerification echeckVerification) throws CnpOnlineException {
@@ -195,7 +235,12 @@ public class CnpOnline {
 		request.setTransaction(CnpContext.getObjectFactory().createEcheckVerification(echeckVerification));
 		CnpOnlineResponse response = sendToCnp(request);
 		JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-		return (EcheckVerificationResponse)newresponse.getValue();
+        EcheckVerificationResponse innerResponse = (EcheckVerificationResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
 	}
 
 	public ForceCaptureResponse forceCapture(ForceCapture forceCapture) throws CnpOnlineException {
@@ -210,7 +255,12 @@ public class CnpOnline {
 		request.setTransaction(CnpContext.getObjectFactory().createForceCapture(forceCapture));
 		CnpOnlineResponse response = sendToCnp(request);
 		JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-		return (ForceCaptureResponse)newresponse.getValue();
+        ForceCaptureResponse innerResponse = (ForceCaptureResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
 	}
 
 	public SaleResponse sale(Sale sale) throws CnpOnlineException {
@@ -225,7 +275,12 @@ public class CnpOnline {
 		request.setTransaction(CnpContext.getObjectFactory().createSale(sale));
 		CnpOnlineResponse response = sendToCnp(request);
 		JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-		return (SaleResponse)newresponse.getValue();
+		SaleResponse innerResponse = (SaleResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
 	}
 	
 	public FraudCheckResponse fraudCheck(FraudCheck fraudCheck) throws CnpOnlineException {
@@ -240,7 +295,12 @@ public class CnpOnline {
 	    request.setTransaction(CnpContext.getObjectFactory().createFraudCheck(fraudCheck));
 	    CnpOnlineResponse response = sendToCnp(request);
 	    JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-	    return (FraudCheckResponse)newresponse.getValue();
+        FraudCheckResponse innerResponse = (FraudCheckResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
 	}
 
 	public RegisterTokenResponse registerToken(RegisterTokenRequestType tokenRequest) throws CnpOnlineException {
@@ -255,7 +315,12 @@ public class CnpOnline {
 		request.setTransaction(CnpContext.getObjectFactory().createRegisterTokenRequest(tokenRequest));
 		CnpOnlineResponse response = sendToCnp(request);
 		JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-		return (RegisterTokenResponse)newresponse.getValue();
+        RegisterTokenResponse innerResponse = (RegisterTokenResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
 	}
 
 	public VoidResponse dovoid(com.cnp.sdk.generate.Void v) throws CnpOnlineException {
@@ -270,7 +335,12 @@ public class CnpOnline {
 		request.setTransaction(CnpContext.getObjectFactory().createVoid(v));
 		CnpOnlineResponse response = sendToCnp(request);
 		JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-		return (VoidResponse)newresponse.getValue();
+        VoidResponse innerResponse = (VoidResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
 	}
 
 	public EcheckVoidResponse echeckVoid(EcheckVoid echeckVoid) throws CnpOnlineException {
@@ -285,7 +355,12 @@ public class CnpOnline {
 		request.setTransaction(CnpContext.getObjectFactory().createEcheckVoid(echeckVoid));
 		CnpOnlineResponse response = sendToCnp(request);
 		JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-		return (EcheckVoidResponse)newresponse.getValue();
+        EcheckVoidResponse innerResponse = (EcheckVoidResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
 	}
 
 	public UpdateCardValidationNumOnTokenResponse updateCardValidationNumOnToken(UpdateCardValidationNumOnToken update) {
@@ -300,8 +375,12 @@ public class CnpOnline {
 		request.setTransaction(CnpContext.getObjectFactory().createUpdateCardValidationNumOnToken(update));
 		CnpOnlineResponse response = sendToCnp(request);
 		JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-		return (UpdateCardValidationNumOnTokenResponse)newresponse.getValue();
-	}
+        UpdateCardValidationNumOnTokenResponse innerResponse = (UpdateCardValidationNumOnTokenResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;	}
 
     public CancelSubscriptionResponse cancelSubscription(CancelSubscription cancellation) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -314,8 +393,12 @@ public class CnpOnline {
         request.setRecurringTransaction(CnpContext.getObjectFactory().createCancelSubscription(cancellation));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends RecurringTransactionResponseType> newresponse = response.getRecurringTransactionResponse();
-        return (CancelSubscriptionResponse)newresponse.getValue();
-    }
+        CancelSubscriptionResponse innerResponse = (CancelSubscriptionResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;    }
 
     public UpdateSubscriptionResponse updateSubscription(UpdateSubscription update) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -328,8 +411,12 @@ public class CnpOnline {
         request.setRecurringTransaction(CnpContext.getObjectFactory().createUpdateSubscription(update));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends RecurringTransactionResponseType> newresponse = response.getRecurringTransactionResponse();
-        return (UpdateSubscriptionResponse)newresponse.getValue();
-    }
+        UpdateSubscriptionResponse innerResponse = (UpdateSubscriptionResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;    }
 
     public CreatePlanResponse createPlan(CreatePlan create) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -342,8 +429,12 @@ public class CnpOnline {
         request.setRecurringTransaction(CnpContext.getObjectFactory().createCreatePlan(create));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends RecurringTransactionResponseType> newresponse = response.getRecurringTransactionResponse();
-        return (CreatePlanResponse)newresponse.getValue();
-    }
+        CreatePlanResponse innerResponse = (CreatePlanResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;    }
 
     public UpdatePlanResponse updatePlan(UpdatePlan update) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -356,8 +447,12 @@ public class CnpOnline {
         request.setRecurringTransaction(CnpContext.getObjectFactory().createUpdatePlan(update));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends RecurringTransactionResponseType> newresponse = response.getRecurringTransactionResponse();
-        return (UpdatePlanResponse)newresponse.getValue();
-    }
+        UpdatePlanResponse innerResponse = (UpdatePlanResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;    }
 
     public ActivateResponse activate(Activate activate) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -371,8 +466,12 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createActivate(activate));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (ActivateResponse)newresponse.getValue();
-    }
+        ActivateResponse innerResponse = (ActivateResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;    }
 
     public DeactivateResponse deactivate(Deactivate deactivate) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -386,8 +485,12 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createDeactivate(deactivate));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (DeactivateResponse)newresponse.getValue();
-    }
+        DeactivateResponse innerResponse = (DeactivateResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;    }
 
     public LoadResponse load(Load load) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -401,8 +504,12 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createLoad(load));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (LoadResponse)newresponse.getValue();
-    }
+        LoadResponse innerResponse = (LoadResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;    }
 
     public UnloadResponse unload(Unload unload) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -416,8 +523,12 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createUnload(unload));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (UnloadResponse)newresponse.getValue();
-    }
+        UnloadResponse innerResponse = (UnloadResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;    }
 
     public BalanceInquiryResponse balanceInquiry(BalanceInquiry balanceInquiry) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -431,8 +542,12 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createBalanceInquiry(balanceInquiry));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (BalanceInquiryResponse)newresponse.getValue();
-    }
+        BalanceInquiryResponse innerResponse = (BalanceInquiryResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;    }
 
     public ActivateReversalResponse activateReversal(ActivateReversal activateReversal) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -446,8 +561,12 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createActivateReversal(activateReversal));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (ActivateReversalResponse)newresponse.getValue();
-    }
+        ActivateReversalResponse innerResponse = (ActivateReversalResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;    }
 
     public DeactivateReversalResponse deactivateReversal(DeactivateReversal deactivateReversal) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -461,8 +580,12 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createDeactivateReversal(deactivateReversal));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (DeactivateReversalResponse)newresponse.getValue();
-    }
+        DeactivateReversalResponse innerResponse = (DeactivateReversalResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;    }
 
     public LoadReversalResponse loadReversal(LoadReversal loadReversal) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -476,8 +599,12 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createLoadReversal(loadReversal));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (LoadReversalResponse)newresponse.getValue();
-    }
+        LoadReversalResponse innerResponse = (LoadReversalResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;    }
 
     public UnloadReversalResponse unloadReversal(UnloadReversal unloadReversal) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -491,8 +618,12 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createUnloadReversal(unloadReversal));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (UnloadReversalResponse)newresponse.getValue();
-    }
+        UnloadReversalResponse innerResponse = (UnloadReversalResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;    }
 
     public RefundReversalResponse refundReversal(RefundReversal refundReversal) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -506,8 +637,12 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createRefundReversal(refundReversal));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (RefundReversalResponse)newresponse.getValue();
-    }
+        RefundReversalResponse innerResponse = (RefundReversalResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;    }
 
     public DepositReversalResponse depositReversal(DepositReversal depositReversal) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -521,8 +656,13 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createDepositReversal(depositReversal));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (DepositReversalResponse)newresponse.getValue();
-    }
+        DepositReversalResponse innerResponse = (DepositReversalResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
+	}
     
     public TransactionTypeWithReportGroup queryTransaction(QueryTransaction queryTransaction) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -551,7 +691,12 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createGiftCardCapture(giftCardCapture));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (GiftCardCaptureResponse)newresponse.getValue();
+        GiftCardCaptureResponse innerResponse = (GiftCardCaptureResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
     }
     
     public GiftCardAuthReversalResponse giftCardAuthReversal(GiftCardAuthReversal giftCardAuthReversal) {
@@ -566,8 +711,13 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createGiftCardAuthReversal(giftCardAuthReversal));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (GiftCardAuthReversalResponse)newresponse.getValue();
-    }
+        GiftCardAuthReversalResponse innerResponse = (GiftCardAuthReversalResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
+	}
     
     public GiftCardCreditResponse giftCardCredit(GiftCardCredit giftCardCredit) {
     	CnpOnlineRequest request = createCnpOnlineRequest();
@@ -581,8 +731,13 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createGiftCardCredit(giftCardCredit));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (GiftCardCreditResponse)newresponse.getValue();
-    }
+        GiftCardCreditResponse innerResponse = (GiftCardCreditResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
+	}
 
     public PayFacCreditResponse payFacCredit(PayFacCredit payFacCredit) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -596,8 +751,13 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createPayFacCredit(payFacCredit));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (PayFacCreditResponse)newresponse.getValue();
-    }
+        PayFacCreditResponse innerResponse = (PayFacCreditResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
+	}
 
     public PayFacDebitResponse payFacDebit(PayFacDebit payFacDebit) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -611,8 +771,12 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createPayFacDebit(payFacDebit));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (PayFacDebitResponse)newresponse.getValue();
-    }
+        PayFacDebitResponse innerResponse = (PayFacDebitResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;    }
 
     public SubmerchantCreditResponse submerchantCredit(SubmerchantCredit submerchantCredit) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -626,8 +790,13 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createSubmerchantCredit(submerchantCredit));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (SubmerchantCreditResponse)newresponse.getValue();
-    }
+        SubmerchantCreditResponse innerResponse = (SubmerchantCreditResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
+	}
 
     public SubmerchantDebitResponse submerchantDebit(SubmerchantDebit submerchantDebit) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -641,8 +810,13 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createSubmerchantDebit(submerchantDebit));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (SubmerchantDebitResponse)newresponse.getValue();
-    }
+        SubmerchantDebitResponse innerResponse = (SubmerchantDebitResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
+	}
     
     public ReserveCreditResponse submerchantCredit(ReserveCredit reserveCredit) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -656,8 +830,13 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createReserveCredit(reserveCredit));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (ReserveCreditResponse)newresponse.getValue();
-    }
+        ReserveCreditResponse innerResponse = (ReserveCreditResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
+	}
 
     public ReserveDebitResponse submerchantDebit(ReserveDebit reserveDebit) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -671,8 +850,13 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createReserveDebit(reserveDebit));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (ReserveDebitResponse)newresponse.getValue();
-    }
+        ReserveDebitResponse innerResponse = (ReserveDebitResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
+	}
 
     public FundingInstructionVoidResponse fundingInstructionVoid(FundingInstructionVoid fundingInstructionVoid) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -686,8 +870,13 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createFundingInstructionVoid(fundingInstructionVoid));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (FundingInstructionVoidResponse)newresponse.getValue();
-    }
+        FundingInstructionVoidResponse innerResponse = (FundingInstructionVoidResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
+	}
     
     public VendorCreditResponse vendorCredit(VendorCredit vendorCredit) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -701,8 +890,13 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createVendorCredit(vendorCredit));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (VendorCreditResponse)newresponse.getValue();
-    }
+        VendorCreditResponse innerResponse = (VendorCreditResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
+	}
 
     public VendorDebitResponse physicalCheckDebit(VendorDebit vendorDebit) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -721,8 +915,13 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createVendorDebit(vendorDebit));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (VendorDebitResponse)newresponse.getValue();
-    }
+        VendorDebitResponse innerResponse = (VendorDebitResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
+	}
 
     public PhysicalCheckCreditResponse physicalCheckCredit(PhysicalCheckCredit physicalCheckCredit) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -736,8 +935,13 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createPhysicalCheckCredit(physicalCheckCredit));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (PhysicalCheckCreditResponse)newresponse.getValue();
-    }
+        PhysicalCheckCreditResponse innerResponse = (PhysicalCheckCreditResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
+	}
     
     public PhysicalCheckDebitResponse physicalCheckDebit(PhysicalCheckDebit physicalCheckDebit) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -751,8 +955,13 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createPhysicalCheckDebit(physicalCheckDebit));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (PhysicalCheckDebitResponse)newresponse.getValue();
-    }
+        PhysicalCheckDebitResponse innerResponse = (PhysicalCheckDebitResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
+	}
 
 	public FastAccessFundingResponse fastAccessFunding(FastAccessFunding fastAccessFunding) {
 		CnpOnlineRequest request = createCnpOnlineRequest();
@@ -766,8 +975,12 @@ public class CnpOnline {
 		request.setTransaction(CnpContext.getObjectFactory().createFastAccessFunding(fastAccessFunding));
 		CnpOnlineResponse response = sendToCnp(request);
 		JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-		return (FastAccessFundingResponse)newresponse.getValue();
-	}
+        FastAccessFundingResponse innerResponse = (FastAccessFundingResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;	}
 
 	public TranslateToLowValueTokenResponse TranslateToLowValueTokenRequest(TranslateToLowValueTokenRequestType translateToLowValueTokenRequest){
 	    CnpOnlineRequest request = createCnpOnlineRequest();
@@ -782,8 +995,13 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createTranslateToLowValueTokenRequest(translateToLowValueTokenRequest));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (TranslateToLowValueTokenResponse)newresponse.getValue();
-    }
+        TranslateToLowValueTokenResponse innerResponse = (TranslateToLowValueTokenResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
+	}
 
     public CustomerCreditResponse customerCredit(CustomerCredit customerCredit) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -797,8 +1015,13 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createCustomerCredit(customerCredit));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (CustomerCreditResponse)newresponse.getValue();
-    }
+        CustomerCreditResponse innerResponse = (CustomerCreditResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
+	}
 
     public CustomerDebitResponse customerDebit(CustomerDebit customerDebit) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -812,8 +1035,13 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createCustomerDebit(customerDebit));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (CustomerDebitResponse)newresponse.getValue();
-    }
+        CustomerDebitResponse innerResponse = (CustomerDebitResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
+	}
 
     public PayoutOrgCreditResponse payoutOrgCredit(PayoutOrgCredit payoutOrgCredit) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -827,8 +1055,12 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createPayoutOrgCredit(payoutOrgCredit));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (PayoutOrgCreditResponse)newresponse.getValue();
-    }
+        PayoutOrgCreditResponse innerResponse = (PayoutOrgCreditResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;    }
 
     public PayoutOrgDebitResponse payoutOrgDebit(PayoutOrgDebit payoutOrgDebit) {
         CnpOnlineRequest request = createCnpOnlineRequest();
@@ -842,8 +1074,13 @@ public class CnpOnline {
         request.setTransaction(CnpContext.getObjectFactory().createPayoutOrgDebit(payoutOrgDebit));
         CnpOnlineResponse response = sendToCnp(request);
         JAXBElement<? extends TransactionTypeWithReportGroup> newresponse = response.getTransactionResponse();
-        return (PayoutOrgDebitResponse)newresponse.getValue();
-    }
+        PayoutOrgDebitResponse innerResponse = (PayoutOrgDebitResponse) newresponse.getValue();
+        //temporarily setting location manually until schema is fixed in 12.13
+        if(innerResponse != null){
+            innerResponse.setLocation(response.getLocation());
+        }
+        return innerResponse;
+	}
 
 	private CnpOnlineRequest createCnpOnlineRequest() {
 		CnpOnlineRequest request = new CnpOnlineRequest();
