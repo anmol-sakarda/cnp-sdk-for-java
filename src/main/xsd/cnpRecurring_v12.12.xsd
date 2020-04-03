@@ -22,6 +22,7 @@
                     <xs:element name="response" type="xp:responseType" />
                     <xs:element name="message" type="xs:string" />
                     <xs:element name="responseTime" type="xs:dateTime" />
+                    <xs:element name="location" type="xs:string" minOccurs="0"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
