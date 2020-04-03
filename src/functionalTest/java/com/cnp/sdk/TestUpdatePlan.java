@@ -19,13 +19,14 @@ public class TestUpdatePlan {
     }
 
     @Test
-    public void simpleupdaatePlan() throws Exception {
+    public void simpleupdatePlan() throws Exception {
        UpdatePlan updatePlan=new UpdatePlan();
        updatePlan.setActive(true);
        updatePlan.setPlanCode("Monthly");
 
        UpdatePlanResponse response=cnp.updatePlan(updatePlan);
-         assertEquals("Approved", response.getMessage());
+       assertEquals("Approved", response.getMessage());
+       assertEquals("sandbox", response.getLocation());
 
     }
 

@@ -34,6 +34,7 @@ public class TestVendor {
 
         VendorCreditResponse response = cnp.vendorCredit(vcredit);
         assertEquals("Approved", response.getMessage());
+        assertEquals("sandbox", response.getLocation());
     }
 
     @Test
