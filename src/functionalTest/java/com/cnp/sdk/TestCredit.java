@@ -39,6 +39,7 @@ public class TestCredit {
         credit.setId("id");
         CreditResponse response = cnp.credit(credit);
         assertEquals("Approved", response.getMessage());
+        assertEquals("sandbox", response.getLocation());
     }
 
     @Test

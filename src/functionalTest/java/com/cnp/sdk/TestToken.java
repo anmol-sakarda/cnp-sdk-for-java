@@ -100,5 +100,18 @@ public class TestToken {
 		RegisterTokenResponse tokenResponse = cnp.registerToken(tokenRequest);
 		assertEquals("1111222233334444", tokenResponse.getCnpToken()); //all paypage registration ids return the same token
 	}
+
+	@Test
+	public void simpleTokenWithResponseLocation() throws Exception{
+		RegisterTokenRequestType token = new RegisterTokenRequestType();
+		token.setOrderId("12344");
+		token.setAccountNumber("1233456789103801");
+		token.setId("id");
+		RegisterTokenResponse response = cnp.registerToken(token);
+		assertEquals("Account number was successfully registered", response.getMessage());
+		assertEquals("sandbox", response.getLocation());
+	}
+
+
 }
 

@@ -28,6 +28,7 @@ public class TestPayoutOrg {
 
         PayoutOrgCreditResponse response = cnp.payoutOrgCredit(pocredit);
         assertEquals("Approved", response.getMessage());
+        assertEquals("sandbox", response.getLocation());
     }
 
     @Test(expected = CnpOnlineException.class)

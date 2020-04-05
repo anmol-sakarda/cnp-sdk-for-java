@@ -60,6 +60,7 @@ public class TestEcheckSale {
 		EcheckSalesResponse response = cnp.echeckSale(echecksale);
 		//System.out.println(response.getVerificationCode());
 		assertEquals("Approved", response.getMessage());
+		assertEquals("sandbox", response.getLocation());
 	}
 	
 	@Test

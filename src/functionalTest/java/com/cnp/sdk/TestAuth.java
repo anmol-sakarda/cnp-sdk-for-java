@@ -36,6 +36,7 @@ public class TestAuth {
 
         AuthorizationResponse response = cnp.authorize(authorization);
         assertEquals("русский中文",response.getReportGroup());
+		assertEquals("sandbox", response.getLocation());
     }
 
 	@Test

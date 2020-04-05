@@ -49,6 +49,7 @@ public class TestGiftCardTransactions {
         
         GiftCardCaptureResponse response = cnp.giftCardCapture(gcCapture);
         assertEquals("Approved", response.getMessage());
+        assertEquals("sandbox", response.getLocation());
 	}
 	
 	@Test

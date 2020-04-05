@@ -25,6 +25,7 @@ public class TestPhysicalCheck {
 
         PhysicalCheckCreditResponse response = cnp.physicalCheckCredit(pccredit);
         assertEquals("Approved", response.getMessage());
+        assertEquals("sandbox", response.getLocation());
     }
 
     @Test

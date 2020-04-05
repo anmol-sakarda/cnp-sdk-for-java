@@ -32,6 +32,7 @@ public class TestSale {
 		sale.setId("id");
 		SaleResponse response = cnp.sale(sale);
 		assertEquals("Approved", response.getMessage());
+		assertEquals("sandbox", response.getLocation());
 	}
 	
 	@Test

@@ -35,6 +35,7 @@ public class TestCustomer {
 
         CustomerCreditResponse response = cnp.customerCredit(ccredit);
         assertEquals("Approved", response.getMessage());
+        assertEquals("sandbox", response.getLocation());
     }
 
     @Test(expected = CnpOnlineException.class)

@@ -50,6 +50,7 @@ public class TestCaptureGivenAuth {
 		capturegivenauth.setId("id");
 		CaptureGivenAuthResponse response = cnp.captureGivenAuth(capturegivenauth);
 		assertEquals("Approved", response.getMessage());
+		assertEquals("sandbox", response.getLocation());
 	}
 	
 	@Test

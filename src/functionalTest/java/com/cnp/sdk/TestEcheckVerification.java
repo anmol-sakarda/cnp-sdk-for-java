@@ -47,6 +47,7 @@ public class TestEcheckVerification {
 		echeckverification.setId("id");
 		EcheckVerificationResponse response = cnp.echeckVerification(echeckverification);
 		assertEquals("Approved", response.getMessage());
+		assertEquals("sandbox", response.getLocation());
 	}
 	
 	@Test
