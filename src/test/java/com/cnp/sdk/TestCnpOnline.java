@@ -758,7 +758,7 @@ public class TestCnpOnline {
 								matches(".*?<cnpOnlineRequest.*?<sale.*?<card>.*?<number>4100100000000002</number>.*?</card>.*?</sale>.*?"),
 								any(Properties.class)))
 				.thenReturn(
-						"<cnpOnlineResponse version='12.11' response='0' message='Valid Format' xmlns='http://www.vantivcnp.com/schema'><saleResponse><cnpTxnId>123</cnpTxnId><accountUpdater><accountUpdateSource>R</accountUpdateSource></accountUpdater></saleResponse></cnpOnlineResponse>");
+						"<cnpOnlineResponse version='12.12' response='0' message='Valid Format' xmlns='http://www.vantivcnp.com/schema'><saleResponse><cnpTxnId>123</cnpTxnId><accountUpdater><accountUpdateSource>R</accountUpdateSource></accountUpdater></saleResponse></cnpOnlineResponse>");
 		cnp.setCommunication(mockedCommunication);
 		SaleResponse saleresponse = cnp.sale(sale);
 		assertEquals(123L, saleresponse.getCnpTxnId());
@@ -785,7 +785,7 @@ public class TestCnpOnline {
 								matches(".*?<cnpOnlineRequest.*?<sale.*?<card>.*?<number>4100100000000002</number>.*?</card>.*?</sale>.*?"),
 								any(Properties.class)))
 				.thenReturn(
-						"<cnpOnlineResponse version='12.11' response='0' message='Valid Format' xmlns='http://www.vantivcnp.com/schema'><saleResponse><cnpTxnId>123</cnpTxnId><accountUpdater><accountUpdateSource>N</accountUpdateSource></accountUpdater></saleResponse></cnpOnlineResponse>");
+						"<cnpOnlineResponse version='12.12' response='0' message='Valid Format' xmlns='http://www.vantivcnp.com/schema'><saleResponse><cnpTxnId>123</cnpTxnId><accountUpdater><accountUpdateSource>N</accountUpdateSource></accountUpdater></saleResponse></cnpOnlineResponse>");
 		cnp.setCommunication(mockedCommunication);
 		SaleResponse saleresponse = cnp.sale(sale);
 		assertEquals(123L, saleresponse.getCnpTxnId());
@@ -852,7 +852,7 @@ public class TestCnpOnline {
 								matches(".*?<cnpOnlineRequest.*?<sale.*?<card>.*?<number>4100100000000002</number>.*?</card>.*?</sale>.*?"),
 								any(Properties.class)))
 				.thenReturn(
-						"<cnpOnlineResponse version='12.11' response='0' message='Valid Format' xmlns='http://www.vantivcnp.com/schema'><saleResponse><cnpTxnId>123</cnpTxnId><accountUpdater><accountUpdateSource>N</accountUpdateSource></accountUpdater></saleResponse></cnpOnlineResponse>");
+						"<cnpOnlineResponse version='12.12' response='0' message='Valid Format' xmlns='http://www.vantivcnp.com/schema'><saleResponse><cnpTxnId>123</cnpTxnId><accountUpdater><accountUpdateSource>N</accountUpdateSource></accountUpdater></saleResponse></cnpOnlineResponse>");
 		cnp.setCommunication(mockedCommunication);
 		SaleResponse saleresponse = cnp.sale(sale);
 		assertEquals(123L, saleresponse.getCnpTxnId());
