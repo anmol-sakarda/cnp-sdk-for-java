@@ -389,24 +389,12 @@ public class CnpBatchRequest {
         } else {
             transaction = objFac.createTransaction(new TransactionType());
         }
-	
-	if(!(transactionType instanceof VendorCreditCtx) && !(transactionType instanceof VendorDebitCtx) &&	
-                !(transactionType instanceof SubmerchantCreditCtx) && !(transactionType instanceof SubmerchantDebitCtx)) {	
-            try {	
-                marshaller.marshal(transaction, osWrttxn);	
-            } catch (JAXBException e) {	
-                throw new CnpBatchException("There was an exception while marshalling the transaction object.", e);	
-            }	
 
-
-        }	
         try {	
              marshaller.marshal(transaction, osWrttxn);	
         } catch (JAXBException e) {	
              throw new CnpBatchException("There was an exception while marshalling the transaction object.", e);	
-        }	
-
-
+        }
         
 
         batchFileStatus = verifyFileThresholds();
