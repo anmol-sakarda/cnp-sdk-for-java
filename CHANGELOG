@@ -1,5 +1,8 @@
 = Vantiv eCommerce CNP CHANGELOG
 
+==Version 12.8.1 (April 28, 2020)
+* BugFix: Fix serialization issue in BatchRequest
+
 ==Version 12.8.0 (August 28, 2019)
 * Feature: Added tokenUrl element
 
