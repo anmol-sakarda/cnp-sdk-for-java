@@ -144,42 +144,43 @@ public class TestBatchFileEncryption {
                 workingDirResponses, requestFile2.getName(), request3, response);
     }*/
 
-/*  @Test
-    public void testSendToCnpSFTP_WithFileConfig() throws Exception {
-        String requestFileName = "cnpSdk-testBatchFile-fileConfigSFTP.xml";
-        CnpBatchFileRequest request = new CnpBatchFileRequest(
-                requestFileName, config);
+  // @Test
+ //   public void testSendToCnpSFTP_WithFileConfig() throws Exception {
+ //       String requestFileName = "cnpSdk-testBatchFile-fileConfigSFTP.xml";
+ //       CnpBatchFileRequest request = new CnpBatchFileRequest(
+ //               requestFileName, config);
 
         // request file is being set in the constructor
-        assertNotNull(request.getFile());
+ //       assertNotNull(request.getFile());
 
-        Properties configFromFile = request.getConfig();
+ //       Properties configFromFile = request.getConfig();
 
         // pre-assert the config file has required param values
-        assertEquals("payments.vantivprelive.com",
-                configFromFile.getProperty("batchHost"));
-        assertEquals("15000", configFromFile.getProperty("batchPort"));
+ //       assertEquals("payments.vantivprelive.com",
+ //               configFromFile.getProperty("batchHost"));
+ //       assertEquals("15000", configFromFile.getProperty("batchPort"));
 
-        String workingDirRequests = configFromFile
-                .getProperty("batchRequestFolder");
-        prepDir(workingDirRequests);
+ //       String workingDirRequests = configFromFile
+ //               .getProperty("batchRequestFolder");
+ //       prepDir(workingDirRequests);
 
-        String workingDirResponses = configFromFile
-                .getProperty("batchResponseFolder");
-        prepDir(workingDirResponses);
+ //       String workingDirResponses = configFromFile
+ //               .getProperty("batchResponseFolder");
+ //       prepDir(workingDirResponses);
 
-        prepareTestRequest(request);
+ //       prepareTestRequest(request);
 
         /* call method under test */
-        CnpBatchFileResponse response = request.sendToCnpSFTP();
+ //       CnpBatchFileResponse response = request.sendToCnpSFTP();
 
         // assert response can be processed through Java API
-        assertJavaApi(request, response);
+ //       assertJavaApi(request, response);
 
         // assert request and response files were created properly
-        assertGeneratedFiles(workingDirRequests, workingDirResponses,
-                requestFileName, request, response);
-    }*/
+ //       assertGeneratedFiles(workingDirRequests, workingDirResponses,
+ //               requestFileName, request, response);
+ //   }
+
 
     private void prepareTestRequest(CnpBatchFileRequest request) {
 
