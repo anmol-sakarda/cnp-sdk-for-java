@@ -1500,7 +1500,7 @@ public class TestBatchFile {
     }
 
 
-
+/*
     @Test
     public void testCtxAll(){
         String requestFileName = "cnpSdk-testBatchFile-CtxAll-" + TIME_STAMP + ".xml";
@@ -1755,7 +1755,7 @@ public class TestBatchFile {
 
         assertEquals(transactionCount, txns);
 
-    }
+    }*/
 
 
 //    @Test
