@@ -28,7 +28,7 @@ public class TestCredit {
     @Test
     public void simpleCreditWithCard() throws Exception {
         Credit credit = new Credit();
-        credit.setAmount(106L);
+        credit.setAmount(1512l);
         credit.setOrderId("12344");
         credit.setOrderSource(OrderSourceType.ECOMMERCE);
         CardType card = new CardType();
@@ -44,7 +44,7 @@ public class TestCredit {
     @Test
     public void simpleCreditWithPaypal() throws Exception {
         Credit credit = new Credit();
-        credit.setAmount(106L);
+        credit.setAmount(1512l);
         credit.setOrderId("123456");
         credit.setOrderSource(OrderSourceType.ECOMMERCE);
         Paypal paypal = new Paypal();
@@ -58,7 +58,7 @@ public class TestCredit {
     @Test
     public void simpleCreditWithCardAndSecondaryAmount() throws Exception {
         Credit credit = new Credit();
-        credit.setAmount(106L);
+        credit.setAmount(1512l);
         credit.setSecondaryAmount(20L);
         credit.setOrderId("12344");
         credit.setOrderSource(OrderSourceType.ECOMMERCE);
@@ -75,7 +75,7 @@ public class TestCredit {
     @Test
     public void simpleCreditWithTxnAndSecondaryAmount() throws Exception {
         Credit credit = new Credit();
-        credit.setAmount(106L);
+        credit.setAmount(1512l);
         credit.setSecondaryAmount(20L);
         credit.setCnpTxnId(1234L);
         credit.setId("id");
@@ -87,7 +87,7 @@ public class TestCredit {
     public void simpleCreditConflictWithTxnAndOrderId() throws Exception {
         Credit credit = new Credit();
         credit.setOrderId("12344");
-        credit.setAmount(106L);
+        credit.setAmount(1512l);
         credit.setSecondaryAmount(20L);
         credit.setCnpTxnId(1234L);
         credit.setId("id");
@@ -102,7 +102,7 @@ public class TestCredit {
     @Test
     public void paypalNotes() throws Exception {
         Credit credit = new Credit();
-        credit.setAmount(106L);
+        credit.setAmount(1512l);
         credit.setOrderId("12344");
         credit.setPayPalNotes("Hello");
         credit.setOrderSource(OrderSourceType.ECOMMERCE);
@@ -119,7 +119,7 @@ public class TestCredit {
     @Test
     public void processingInstructionAndAmexData() throws Exception {
         Credit credit = new Credit();
-        credit.setAmount(2000L);
+        credit.setAmount(1512l);
         credit.setOrderId("12344");
         credit.setOrderSource(OrderSourceType.ECOMMERCE);
         ProcessingInstructions processinginstructions = new ProcessingInstructions();
@@ -138,7 +138,7 @@ public class TestCredit {
     @Test
     public void testCreditWithPin() throws Exception {
         Credit credit = new Credit();
-        credit.setAmount(106L);
+        credit.setAmount(1512l);
         credit.setSecondaryAmount(20L);
         credit.setCnpTxnId(1234L);
         credit.setId("id");
