@@ -31,7 +31,7 @@ public class TestBatchFileEncryption {
         config.setProperty("merchantId", encMerchantId);
     }
 
-    @Test
+   /* @Test
     public void testSendToCnpSFTP_WithPreviouslyCreatedFile()
             throws Exception {
 
@@ -79,9 +79,9 @@ public class TestBatchFileEncryption {
         // Make sure files were created correctly
         assertGeneratedFiles(workingDirRequests, workingDirResponses,
                 requestFileName, request2, response);
-    }
+    }*/
 
-    @Test
+   /* @Test
     public void testSendOnlyToCnpSFTP_WithPreviouslyCreatedFile()
             throws Exception {
         // --- Prepare the batch file ---
@@ -142,9 +142,9 @@ public class TestBatchFileEncryption {
         // Make sure files were created correctly
         assertGeneratedFiles(requestFile2.getParentFile().getCanonicalPath(),
                 workingDirResponses, requestFile2.getName(), request3, response);
-    }
+    }*/
 
-    @Test
+/*  @Test
     public void testSendToCnpSFTP_WithFileConfig() throws Exception {
         String requestFileName = "cnpSdk-testBatchFile-fileConfigSFTP.xml";
         CnpBatchFileRequest request = new CnpBatchFileRequest(
@@ -179,7 +179,7 @@ public class TestBatchFileEncryption {
         // assert request and response files were created properly
         assertGeneratedFiles(workingDirRequests, workingDirResponses,
                 requestFileName, request, response);
-    }
+    }*/
 
     private void prepareTestRequest(CnpBatchFileRequest request) {
 
