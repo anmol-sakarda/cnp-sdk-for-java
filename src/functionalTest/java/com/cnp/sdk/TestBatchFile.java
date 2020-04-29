@@ -1663,46 +1663,6 @@ public class TestBatchFile {
         payDetails.add("ctx1 for submerchantcredit");
         echeck.setCtxPaymentInformation(echeckPayInfo);
 
-        VendorCreditCtx vcredit = new VendorCreditCtx();
-        vcredit.setReportGroup("vendorCredit");
-        vcredit.setId("111");
-        vcredit.setFundingSubmerchantId("vendorCreditTest");
-        vcredit.setVendorName("Vendor101");
-        vcredit.setFundsTransferId(fundsTransferIdString);
-        vcredit.setAmount(500l);
-        vcredit.setAccountInfo(echeck);
-        batch.addTransaction(vcredit);
-
-        VendorDebitCtx vdebit = new VendorDebitCtx();
-        vdebit.setReportGroup("vendorDebit");
-        vdebit.setId("111");
-        vdebit.setFundingSubmerchantId("vendorDebit");
-        vdebit.setVendorName("Vendor101");
-        vdebit.setFundsTransferId(fundsTransferIdString);
-        vdebit.setAmount(500l);
-        vdebit.setAccountInfo(echeck);
-        batch.addTransaction(vdebit);
-
-        SubmerchantCreditCtx smcredit = new SubmerchantCreditCtx();
-        smcredit.setReportGroup("submerchantCredit");
-        smcredit.setId("111");
-        smcredit.setFundingSubmerchantId("submerchantCredit");
-        smcredit.setSubmerchantName("submerchant101");
-        smcredit.setFundsTransferId(fundsTransferIdString);
-        smcredit.setAmount(500l);
-        smcredit.setAccountInfo(echeck);
-        batch.addTransaction(smcredit);
-
-        SubmerchantDebitCtx smdebit = new SubmerchantDebitCtx();
-        smdebit.setReportGroup("submerchantDebit");
-        smdebit.setId("111");
-        smdebit.setFundingSubmerchantId("submerchantDebit");
-        smdebit.setSubmerchantName("submerchant101");
-        smdebit.setFundsTransferId(fundsTransferIdString);
-        smdebit.setAmount(500l);
-        smdebit.setAccountInfo(echeck);
-        batch.addTransaction(smdebit);
-
         int transactionCount = batch.getNumberOfTransactions();
 
         CnpBatchFileResponse fileResponse = request.sendToCnpSFTP();
