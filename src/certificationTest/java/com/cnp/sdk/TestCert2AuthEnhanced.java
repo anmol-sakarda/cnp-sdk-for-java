@@ -16,6 +16,7 @@ public class TestCert2AuthEnhanced {
 
 	private static CnpOnline cnp;
 
+	private String preliveStatus = System.getenv("preliveStatus");
 
 	@BeforeClass
 	public static void beforeClass() throws Exception {
@@ -23,14 +24,15 @@ public class TestCert2AuthEnhanced {
         FileInputStream fileInputStream = new FileInputStream((new Configuration()).location());
         config.load(fileInputStream);
         config.setProperty("url", "https://payments.vantivprelive.com/vap/communicator/online");
-        config.setProperty("proxyHost", "inetproxy.infoftps.com");
-        config.setProperty("proxyPort", "8080");
+        config.setProperty("proxyHost", "");
+        config.setProperty("proxyPort", "");
         config.setProperty("multiSite", "false");
         cnp = new CnpOnline(config);
 	}
 
 	@Test
 	public void test14() throws Exception {
+		Assume.assumeFalse(this.preliveStatus.equalsIgnoreCase("down"));
 		Authorization authorization = new Authorization();
 		authorization.setOrderId("14");
 		authorization.setAmount(3000L);
@@ -54,6 +56,7 @@ public class TestCert2AuthEnhanced {
 
 	@Test
 	public void test15() throws Exception {
+		Assume.assumeFalse(this.preliveStatus.equalsIgnoreCase("down"));
 		Authorization authorization = new Authorization();
 		authorization.setOrderId("15");
 		authorization.setAmount(3000L);
@@ -76,6 +79,7 @@ public class TestCert2AuthEnhanced {
 
 	@Test
 	public void test16() throws Exception {
+		Assume.assumeFalse(this.preliveStatus.equalsIgnoreCase("down"));
 		Authorization authorization = new Authorization();
 		authorization.setOrderId("16");
 		authorization.setAmount(3000L);
@@ -246,6 +250,7 @@ public class TestCert2AuthEnhanced {
 
 	@Test
 	public void test24() throws Exception {
+		Assume.assumeFalse(this.preliveStatus.equalsIgnoreCase("down"));
 		Authorization authorization = new Authorization();
 		authorization.setOrderId("24");
 		authorization.setAmount(5000L);
@@ -265,6 +270,7 @@ public class TestCert2AuthEnhanced {
 
 	@Test
 	public void test25() throws Exception {
+		Assume.assumeFalse(this.preliveStatus.equalsIgnoreCase("down"));
 		Authorization authorization = new Authorization();
 		authorization.setOrderId("25");
 		authorization.setAmount(5000L);
@@ -285,6 +291,7 @@ public class TestCert2AuthEnhanced {
 
 	@Test
 	public void test26() throws Exception {
+		Assume.assumeFalse(this.preliveStatus.equalsIgnoreCase("down"));
 		Authorization authorization = new Authorization();
 		authorization.setOrderId("26");
 		authorization.setAmount(18698L);
@@ -310,6 +317,7 @@ public class TestCert2AuthEnhanced {
 
 	@Test
 	public void test27() throws Exception {
+		Assume.assumeFalse(this.preliveStatus.equalsIgnoreCase("down"));
 		Authorization authorization = new Authorization();
 		authorization.setOrderId("27");
 		authorization.setAmount(18698L);
@@ -336,6 +344,7 @@ public class TestCert2AuthEnhanced {
 
 	@Test
 	public void test28() throws Exception {
+		Assume.assumeFalse(this.preliveStatus.equalsIgnoreCase("down"));
 		Authorization authorization = new Authorization();
 		authorization.setOrderId("28");
 		authorization.setAmount(15000L);
@@ -362,6 +371,7 @@ public class TestCert2AuthEnhanced {
 
 	@Test
 	public void test29() throws Exception {
+		Assume.assumeFalse(this.preliveStatus.equalsIgnoreCase("down"));
 		Authorization authorization = new Authorization();
 		authorization.setOrderId("29");
 		authorization.setAmount(18699L);

@@ -14,20 +14,23 @@ public class TestCert3AuthReversal {
 
 	private static CnpOnline cnp;
 
+	private String preliveStatus = System.getenv("preliveStatus");
+
 	@BeforeClass
 	public static void beforeClass() throws Exception {
         Properties config = new Properties();
         FileInputStream fileInputStream = new FileInputStream((new Configuration()).location());
         config.load(fileInputStream);
 		config.setProperty("url", "https://payments.vantivprelive.com/vap/communicator/online");
-		config.setProperty("proxyHost", "inetproxy.infoftps.com");
-		config.setProperty("proxyPort", "8080");
+		config.setProperty("proxyHost", "");
+		config.setProperty("proxyPort", "");
 		config.setProperty("multiSite", "false");
         cnp = new CnpOnline(config);
 	}
 
 	@Test
 	public void test32() throws Exception {
+		Assume.assumeFalse(this.preliveStatus.equalsIgnoreCase("down"));
 		Authorization auth = new Authorization();
 		auth.setOrderId("32");
 		auth.setAmount(10010L);
@@ -73,6 +76,7 @@ public class TestCert3AuthReversal {
 
 	@Test
 	public void test33() throws Exception {
+		Assume.assumeFalse(this.preliveStatus.equalsIgnoreCase("down"));
 		Authorization auth = new Authorization();
 		auth.setOrderId("33");
 		auth.setAmount(20020L);
@@ -114,6 +118,7 @@ public class TestCert3AuthReversal {
 
 	@Test
 	public void test34() throws Exception {
+		Assume.assumeFalse(this.preliveStatus.equalsIgnoreCase("down"));
 		Authorization auth = new Authorization();
 		auth.setOrderId("34");
 		auth.setAmount(30030L);
@@ -151,6 +156,7 @@ public class TestCert3AuthReversal {
 
 	@Test
 	public void test35() throws Exception {
+		Assume.assumeFalse(this.preliveStatus.equalsIgnoreCase("down"));
 		Authorization auth = new Authorization();
 		auth.setOrderId("35");
 		auth.setAmount(40040L);
@@ -195,6 +201,7 @@ public class TestCert3AuthReversal {
 
 	@Test
 	public void test36() throws Exception {
+		Assume.assumeFalse(this.preliveStatus.equalsIgnoreCase("down"));
 		Authorization auth = new Authorization();
 		auth.setOrderId("36");
 		auth.setAmount(20500L);
