@@ -2,6 +2,8 @@ package com.cnp.sdk;
 
 
 import com.cnp.sdk.generate.*;
+
+import org.junit.Assume;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -14,13 +16,14 @@ public class TestCert2AuthEnhanced {
 
 	private static CnpOnline cnp;
 
+
 	@BeforeClass
 	public static void beforeClass() throws Exception {
-        Properties config = new Properties();
+		Properties config = new Properties();
         FileInputStream fileInputStream = new FileInputStream((new Configuration()).location());
         config.load(fileInputStream);
         config.setProperty("url", "https://payments.vantivprelive.com/vap/communicator/online");
-        config.setProperty("proxyHost", "inetproxy");
+        config.setProperty("proxyHost", "inetproxy.infoftps.com");
         config.setProperty("proxyPort", "8080");
         config.setProperty("multiSite", "false");
         cnp = new CnpOnline(config);
