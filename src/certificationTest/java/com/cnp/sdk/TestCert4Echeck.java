@@ -2,6 +2,8 @@ package com.cnp.sdk;
 
 
 import com.cnp.sdk.generate.*;
+import org.junit.Assume;
+import org.junit.Assume;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
